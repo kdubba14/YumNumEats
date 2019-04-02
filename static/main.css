@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+}
+
+#map > div {
+  width: 70%;
+  height: 70vh;
+}
+
+#container > div {
+  min-height: 70vh;
+  min-width: 70%;
+}
+
+input:focus {
+  border: .2em solid #83D685 !important;
+  /* box-shadow:0 1px 2px rgba(255, 167, 91, 1) outset !important; */
+  /* box-shadow: none !important; */
+  margin: none !important;
+  outline-color: #83D685 !important;
+}
+
+textarea:focus {
+  border: .2em solid #83D685 !important;
+  /* box-shadow:0 1px 2px rgba(255, 167, 91, 1) outset !important; */
+  /* box-shadow: none !important; */
+  margin: none !important;
+  outline-color: #83D685 !important;
+}
+
+.nameEmail {
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: .3em;
+  width: 45%;
+}
+
+.subjectMessage {
+  display: block;
+  width: 100%;
+  border-radius: .3em;
+  box-sizing: border-box;
+}
+
+.messageField {
+  height: 10em;
+}
+
+.nameField {
+  float: left;
+  clear: left;
+}
+
+.emailField {
+  float: right;
+  clear: right;
+}
+
+#menu p {
+  border-bottom: .05em solid rgba(150,114,86,0.2);
+}
+
+#menu h3 {
+  border-bottom: .05em solid #FFA75B;
+}
+
+.showPics:hover {
+  background-color: #83D685;
+  transition: .5s;
+}
+
