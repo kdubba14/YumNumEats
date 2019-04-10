@@ -29,15 +29,13 @@ const Form = (props) => (
 
     <h1 style={{paddingTop: "10vh", fontFamily: "gelo, serif", color: "#FFF9E7"}}>CONTACT US</h1>
 
-    <input name="name" onChange={props.handleTyping} className="nameEmail nameField" style={inputStyle} type="text" placeholder="Name" />
-    <input name="email" onChange={props.handleTyping} className="nameEmail emailField" style={inputStyle} type="email" placeholder="Email" />
+    <input name="name" ref={props.nameRef} onChange={props.handleTyping} className="nameEmail nameField" style={inputStyle} type="text" placeholder="Name" />
+    <input name="email" ref={props.emailRef} onChange={props.handleTyping} className="nameEmail emailField" style={inputStyle} type="email" placeholder="Email" />
 
     <input name="subject" onChange={props.handleTyping} className="subjectMessage" style={inputStyle} type="text" placeholder="Subject" />
-    <textarea name="message" onChange={props.handleTyping} className="subjectMessage messageField" style={inputStyle} type="text-area" placeholder="Message" />
+    <textarea name="message" ref={props.messageRef} onChange={props.handleTyping} className="subjectMessage messageField" style={inputStyle} type="text-area" placeholder="Message" />
 
     <button type="submit" onClick={props.handleSubmit} style={buttonStyle}>Send Message</button>
-
-    <p style={{fontSize: ".9em", paddingTop: "0em", marginTop: "1em", color: "#FFF9E7"}}>( Form Validation to be added )</p>
   
   </div>
 
@@ -57,30 +55,49 @@ const Sent = () => (
 
 class ContactForm extends React.Component { 
   
-  state={
+  constructor() {
+    super();
+
+    this.nameRef = React.createRef();
+    this.emailRef = React.createRef();
+    this.messageRef = React.createRef();
+
+    this.state={
     name: '', 
     email: '', 
     subject: '', 
     message: '', 
     loading: false, 
     sent: false
+    }
   }
 
-  _handleTyping = (e) => (
+  _handleTyping = (e) => {
+    e.target.classList.remove('invalid')
+
     this.setState({
       [e.target.name]: e.target.value
     })
-  )
+  }
 
   _handleSubmit = () => {
 
-    console.log(this.state.name)
-    console.log(this.state.email)
-    console.log(this.state.subject)
-    console.log(this.state.message)
+    let required = [this.nameRef, this.emailRef, this.messageRef];
+    var validated = 0;
 
-    this._messageSending()
-    setTimeout(() => {this._messageSent()},2000)
+    required.map((field) => {
+      if (field.current.value === "") {
+        field.current.classList.add('invalid')
+      }else{
+        field.current.classList.remove('invalid')
+        validated += 1;
+      }
+    })
+
+    if (validated === 3) {
+      this._messageSending()
+      setTimeout(() => {this._messageSent()},2000)
+    }
   }
 
   _messageSending = () => {
@@ -108,7 +125,7 @@ class ContactForm extends React.Component {
       )
     }else{
       return (
-        <Form handleTyping={this._handleTyping} handleSubmit={this._handleSubmit} />
+        <Form handleTyping={this._handleTyping} handleSubmit={this._handleSubmit} nameRef={this.nameRef} emailRef={this.emailRef} messageRef={this.messageRef} />
       )
     }
 

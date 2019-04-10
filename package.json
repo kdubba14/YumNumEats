@@ -1,13 +1,17 @@
 {
   "name": "custom-server-express",
   "version": "1.0.0",
+  "homepage": "https://kdubba14.github.io/YumNumEats", 
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages build",
     "dev": "nodemon server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "express": "^4.16.4",
+    "gh-pages": "^2.0.1",
     "google-map-react": "^1.1.2",
     "google-maps-react": "^2.0.2",
     "intersection-observer": "^0.5.1",

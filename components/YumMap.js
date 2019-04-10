@@ -7,6 +7,10 @@ const mapStyle = {
   height: '70vh'
 }
 
+const Marker = props => {
+  return <img className="marker" src="../static/yumnumMarker.svg" />
+}
+
 export class YumMap extends Component {
   
   state={
@@ -24,11 +28,12 @@ export class YumMap extends Component {
           bootstrapURLKeys={{ key: keys.mapKey }}
           defaultCenter={this.state.center}
           defaultZoom={this.state.zoom}
+          
         >
-          <div
+          <Marker
             lat={5.532547}
             lng={-87.071993}
-            text={'YumNums (may need a boat)'}
+            text="YumNums (may need a boat)"
           />
         </GoogleMapReact>
       </div>
