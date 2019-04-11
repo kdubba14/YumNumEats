@@ -73,7 +73,7 @@ const App = () => {
       <title>YumNum</title>
       <link rel="stylesheet" href="https://use.typekit.net/kds4gsr.css"></link>
       <link rel="stylesheet" href="../static/main.css" />
-      
+      <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
     </Head>
 
     
