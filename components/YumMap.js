@@ -2,32 +2,29 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import keys from '../config/keys';
 
-const mapStyle = {
-  width: '70%',
-  height: '70vh'
-}
+
 
 const Marker = props => {
   return <img className="marker" src="../static/yumnumMarker.svg" />
 }
 
-export class YumMap extends Component {
+const YumMap = () => {
   
-  state={
-    center: {
+  const center = {
       lat: 5.53, 
       lng: -87.07
-    }, 
-    zoom: 13
-  }
+    } 
+    
+  const zoom = 13
   
-  render() {
+  
+  
     return (
       <div id="map" style={{height: "80vh", width: "100%", padding: "0", margin: "10vh 0 0 0", textAlign: "center"}}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: keys.mapKey }}
-          defaultCenter={this.state.center}
-          defaultZoom={this.state.zoom}
+          defaultCenter={center}
+          defaultZoom={zoom}
           
         >
           <Marker
@@ -38,7 +35,7 @@ export class YumMap extends Component {
         </GoogleMapReact>
       </div>
     );
-  }
+  
 }
 
 export default YumMap;

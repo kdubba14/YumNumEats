@@ -1,4 +1,5 @@
 import {Link, animateScroll} from 'react-scroll';
+import {useInView} from 'react-intersection-observer';
 
 const scrollToTop = () => {
   animateScroll.scrollToTop()
@@ -10,9 +11,54 @@ const liStyle = {
   margin: "0 .5em"
 }
 
-const Nav = (props) => (
+const navStyle = (show) => {
+  if (show) {
+    return {
+      height: "10vh", 
+      width: "inherit", 
+      backgroundColor: "white", 
+      position: "fixed", 
+      top: "0", 
+      right: "0", 
+      left: "0", 
+      margin: "0", 
+      borderBottom: ".05em solid #FFA75B", 
+      display: "grid", 
+      gridTemplateColumns: "1fr 4fr", 
+      gridTemplateRows: "10vh", 
+      fontSize: "1em", 
+      transitionDuration: ".25s", 
+      zIndex: "1"
+    }
+  }else{
+    return {
+      height: "10vh", 
+      width: "inherit", 
+      backgroundColor: "#FFF9E7",
+      position: "fixed", 
+      top: "0", 
+      right: "0", 
+      left: "0",  
+      margin: "0", 
+      display: "grid", 
+      gridTemplateColumns: "1fr 4fr", 
+      fontSize: "1em", 
+      transitionDuration: "1s", 
+      zIndex: "1"
+    }
+  }
+}
 
-  <div className="navbar" style={props.style}>
+const Nav = (props) => {
+
+  const [navHideRef, showNav] = useInView({
+    /* Optional options */
+    threshold: 0.90,
+  })
+  
+  return (
+  <React.Fragment>
+  <div style={navStyle(showNav)} className="navbar">
       
     <a onClick={scrollToTop} style={{textAlign: "right", cursor: "pointer"}}>
       <img style={{height: "10vh", padding: "0", margin: "0 0 0 auto"}} src="../static/yumnumlogo.png" />
@@ -87,7 +133,9 @@ const Nav = (props) => (
     </ul>
 
   </div>
-
-)
+  <div ref={navHideRef} className="nav-fade" style={{width: "100%", height: "10vh", padding: "0", margin: "0", position: "absolute", top:"0", zIndex: "-1"}}></div>
+  </React.Fragment>
+  )
+}
 
 export default Nav;
