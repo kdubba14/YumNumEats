@@ -61,7 +61,7 @@ const Nav = (props) => {
   <div style={navStyle(showNav)} className="navbar">
       
     <a onClick={scrollToTop} style={{textAlign: "right", cursor: "pointer"}}>
-      <img style={{height: "10vh", padding: "0", margin: "0 0 0 auto"}} src="../static/yumnumlogo.png" />
+      <img alt="YumNum Logo" style={{height: "10vh", padding: "0", margin: "0 0 0 auto"}} src="../static/yumnumlogo.png" />
     </a>
 
     <ul style={{listStyle: "none", color: "#967256", display: "inline-block", textAlign: "center", height: "2vh", width: "100%", margin: "4vh 0", padding: "0", fontFamily: "gelo, serif"}}>

@@ -29,11 +29,11 @@ const Form = (props) => (
 
     <h1 style={{paddingTop: "10vh", fontFamily: "gelo, serif", color: "#FFF9E7"}}>CONTACT US</h1>
 
-    <input name="name" ref={props.nameRef} onChange={props.handleTyping} className="nameEmail nameField" style={inputStyle} type="text" placeholder="Name" />
-    <input name="email" ref={props.emailRef} onChange={props.handleTyping} className="nameEmail emailField" style={inputStyle} type="email" placeholder="Email" />
+    <input name="name" aria-label="Name" ref={props.nameRef} onChange={props.handleTyping} className="nameEmail nameField" style={inputStyle} type="text" placeholder="Name" />
+    <input name="email" aria-label="Email" ref={props.emailRef} onChange={props.handleTyping} className="nameEmail emailField" style={inputStyle} type="email" placeholder="Email" />
 
-    <input name="subject" onChange={props.handleTyping} className="subjectMessage" style={inputStyle} type="text" placeholder="Subject" />
-    <textarea name="message" ref={props.messageRef} onChange={props.handleTyping} className="subjectMessage messageField" style={inputStyle} type="text-area" placeholder="Message" />
+    <input name="subject" aria-label="Subject" onChange={props.handleTyping} className="subjectMessage" style={inputStyle} type="text" placeholder="Subject" />
+    <textarea name="message" aria-label="Message" ref={props.messageRef} onChange={props.handleTyping} className="subjectMessage messageField" style={inputStyle} type="text-area" placeholder="Message" />
 
     <button type="submit" onClick={props.handleSubmit} style={buttonStyle}>Send Message</button>
   

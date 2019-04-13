@@ -58,7 +58,7 @@ class Menu extends React.Component {
 
         <div style={showMenu(this.state.showSandwiches, 0)}>
           
-          <img src="../static/003-sandwich.svg" style={{width: "30%", padding: "10% 0 5% 0"}} />
+          <img alt="Sandwiches" src="../static/003-sandwich.svg" style={{width: "30%", padding: "10% 0 5% 0"}} />
 
           <h3 style={{fontFamily: "gelo, serif"}}>Sandwiches</h3>
 
@@ -75,7 +75,7 @@ class Menu extends React.Component {
 
         <div style={showMenu(this.state.showSoups, 0.25)}>
           
-          <img src="../static/004-noodles.svg" style={{width: "30%", padding: "10% 0 5% 0"}} />
+          <img alt="Soups" src="../static/004-noodles.svg" style={{width: "30%", padding: "10% 0 5% 0"}} />
 
           <h3 style={{fontFamily: "gelo, serif"}}>Soups</h3>
 
@@ -92,7 +92,7 @@ class Menu extends React.Component {
 
         <div style={showMenu(this.state.showFruits, .5)}>
           
-          <img src="../static/002-fruit.svg" style={{width: "30%", padding: "10% 0 5% 0"}} />
+          <img alt="Fruits" src="../static/002-fruit.svg" style={{width: "30%", padding: "10% 0 5% 0"}} />
 
           <h3 style={{fontFamily: "gelo, serif"}}>Fruits</h3>
 
@@ -109,7 +109,7 @@ class Menu extends React.Component {
 
         <div style={showMenu(this.state.showDrinks, .75)}>
           
-          <img src="../static/001-coconut-drink.svg" style={{width: "30%", padding: "10% 0 5% 0"}} />
+          <img alt="Drinks" src="../static/001-coconut-drink.svg" style={{width: "30%", padding: "10% 0 5% 0"}} />
 
           <h3 style={{fontFamily: "gelo, serif"}}>Drinks</h3>
 

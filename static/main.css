@@ -7,7 +7,7 @@ body {
   height: 70vh;
 }
 
-#container > div {
+.container > div {
   min-height: 70vh;
   min-width: 70%;
 }
