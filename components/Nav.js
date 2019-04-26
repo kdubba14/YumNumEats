@@ -1,5 +1,6 @@
 import {Link, animateScroll} from 'react-scroll';
 import {useInView} from 'react-intersection-observer';
+import {useState} from 'react';
 
 const scrollToTop = () => {
   animateScroll.scrollToTop()
@@ -13,39 +14,17 @@ const liStyle = {
 
 const navStyle = (show) => {
   if (show) {
-    return {
-      height: "10vh", 
-      width: "inherit", 
-      backgroundColor: "white", 
-      position: "fixed", 
-      top: "0", 
-      right: "0", 
-      left: "0", 
-      margin: "0", 
-      borderBottom: ".05em solid #FFA75B", 
-      display: "grid", 
-      gridTemplateColumns: "1fr 4fr", 
-      gridTemplateRows: "10vh", 
-      fontSize: "1em", 
-      transitionDuration: ".25s", 
-      zIndex: "1"
-    }
+    return "navbar top-nav"
   }else{
-    return {
-      height: "10vh", 
-      width: "inherit", 
-      backgroundColor: "#FFF9E7",
-      position: "fixed", 
-      top: "0", 
-      right: "0", 
-      left: "0",  
-      margin: "0", 
-      display: "grid", 
-      gridTemplateColumns: "1fr 4fr", 
-      fontSize: "1em", 
-      transitionDuration: "1s", 
-      zIndex: "1"
-    }
+    return "navbar else-nav"
+  }
+}
+
+const dropDown = (drop) => {
+  if (drop) {
+    return "mobileLinks drop"
+  }else{
+    return "mobileLinks"
   }
 }
 
@@ -55,17 +34,21 @@ const Nav = (props) => {
     /* Optional options */
     threshold: 0.90,
   })
+
+  const [dropped, navDrop] = useState(false)
+
+
   
   return (
   <React.Fragment>
-  <div style={navStyle(showNav)} className="navbar">
+  <div className={navStyle(showNav)} >
       
     <a onClick={scrollToTop} style={{textAlign: "right", cursor: "pointer"}}>
       <img alt="YumNum Logo" style={{height: "10vh", padding: "0", margin: "0 0 0 auto"}} src="../static/yumnumlogo.png" />
     </a>
 
-    <ul style={{listStyle: "none", color: "#967256", display: "inline-block", textAlign: "center", height: "2vh", width: "100%", margin: "4vh 0", padding: "0", fontFamily: "gelo, serif"}}>
-      <li style={liStyle}>
+    <ul className="webLinks">
+      <li className="menuLink" style={liStyle}>
         <Link 
           activeClass="active"
           to="menu"
@@ -78,7 +61,7 @@ const Nav = (props) => {
             Menu
         </Link>
       </li>
-      <li style={liStyle}>
+      <li className="dealLink" style={liStyle}>
         <Link 
           activeClass="active"
           to="deals"
@@ -91,7 +74,7 @@ const Nav = (props) => {
             Deal of the Week
         </Link>
       </li>
-      <li style={liStyle}>
+      <li className="mapLink" style={liStyle}>
         <Link 
           activeClass="active"
           to="map"
@@ -104,7 +87,7 @@ const Nav = (props) => {
             Locations
         </Link>
       </li>
-      <li style={liStyle}>
+      <li className="aboutLink" style={liStyle}>
         <Link 
           activeClass="active"
           to="about-us"
@@ -117,7 +100,7 @@ const Nav = (props) => {
             About Us
         </Link>
       </li>
-      <li style={liStyle}>
+      <li className="contactLink" style={liStyle}>
         <Link 
           activeClass="active"
           to="contact"
@@ -132,8 +115,88 @@ const Nav = (props) => {
       </li>
     </ul>
 
+    <a onClick={() => {navDrop(!dropped)}} className="menuButton" >
+      <img src="../static/menu-button.svg" style={{height: "10vh", width: "12.5%", maxWidth: "40px", marginLeft: "72.5%", padding: "0 5%", cursor: "pointer"}} />
+    </a>
+
   </div>
-  <div ref={navHideRef} className="nav-fade" style={{width: "100%", height: "10vh", padding: "0", margin: "0", position: "absolute", top:"0", zIndex: "-1"}}></div>
+
+
+
+  <div ref={navHideRef} className="nav-fade" style={{width: "100%", height: "10vh", padding: "0", margin: "0", position: "absolute", top:"0", zIndex: "-1"}} />
+  
+  
+  
+  <div className={dropDown(dropped)}>
+    <ul>
+      <li className="menuLink" style={{display: "block"}}>
+        <Link 
+          as="a" 
+          activeClass="active"
+          to="menu"
+          spy={true} 
+          offset={-100} 
+          smooth={true}
+          duration= {750}
+          style={{color: "#967256", 
+          textDecoration: "none", cursor: "pointer"}}>
+            Menu
+        </Link>
+      </li>
+      <li className="dealLink" style={{display: "block"}}>
+        <Link 
+          activeClass="active"
+          to="deals"
+          spy={true} 
+          offset={-100} 
+          smooth={true}
+          duration= {750}
+          style={{color: "#967256", 
+          textDecoration: "none", cursor: "pointer"}}>
+            Deal of the Week
+        </Link>
+      </li>
+      <li className="mapLink" style={{display: "block"}}>
+        <Link 
+          activeClass="active"
+          to="map"
+          spy={true} 
+          offset={-100} 
+          smooth={true}
+          duration= {750}
+          style={{color: "#967256", 
+          textDecoration: "none", cursor: "pointer"}}>
+            Locations
+        </Link>
+      </li>
+      <li className="aboutLink" style={{display: "block"}}>
+        <Link 
+          activeClass="active"
+          to="about-us"
+          spy={true} 
+          offset={-100} 
+          smooth={true}
+          duration= {750}
+          style={{color: "#967256", 
+          textDecoration: "none", cursor: "pointer"}}>
+            About Us
+        </Link>
+      </li>
+      <li className="contactLink" style={{display: "block"}}>
+        <Link 
+          activeClass="active"
+          to="contact"
+          spy={true} 
+          offset={-100} 
+          smooth={true}
+          duration= {750}
+          style={{color: "#967256", 
+          textDecoration: "none", cursor: "pointer"}}>
+            Contact Us
+        </Link>
+      </li>
+    </ul>
+  </div>
   </React.Fragment>
   )
 }

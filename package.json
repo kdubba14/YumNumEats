@@ -1,7 +1,7 @@
 {
   "name": "custom-server-express",
   "version": "1.0.0",
-  "homepage": "https://kdubba14.github.io/YumNumEats", 
+  "homepage": "https://kdubba14.github.io/YumNumEats",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages build",
@@ -10,17 +10,23 @@
     "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "gh-pages": "^2.0.1",
     "google-map-react": "^1.1.2",
     "google-maps-react": "^2.0.2",
     "intersection-observer": "^0.5.1",
     "next": "8.0.3",
+    "next-manifest": "^1.6.0",
+    "next-offline": "^3.3.8",
     "now": "^14.2.4",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-intersection-observer": "^8.22.5",
-    "react-scroll": "^1.7.11"
+    "react-scroll": "^1.7.11",
+    "serve-static": "^1.13.2",
+    "sw-precache-webpack-plugin": "^0.11.5",
+    "workbox-webpack-plugin": "^4.3.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"
