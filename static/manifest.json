@@ -1,7 +1,7 @@
 {
   "name": "YumNum Eatery",
   "short_name": "YumNum",
-  "theme_color": "#ffa75b",
+  "theme_color": "#dc741a",
   "background_color": "#fff9e7",
   "display": "standalone",
   "Scope": "/",
