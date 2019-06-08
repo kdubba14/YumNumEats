@@ -4,10 +4,13 @@ const Contact = () => (
   <div
     id="contact"
     style={{
+      position: "relative",
       height: "80vh",
-      width: "100%",
+      width: "100vw",
       margin: "10vh 0",
-      textAlign: "center"
+      textAlign: "center",
+      overflow: "hidden",
+      zIndex: "3"
     }}
   >
     <img
@@ -15,10 +18,11 @@ const Contact = () => (
       src="../static/shareshake.jpg"
       style={{
         width: "100%",
-        height: "80vh",
+        bottom: "20%",
+        display: "block",
+        objectFit: "cover",
         position: "absolute",
-        left: "0",
-        right: "0",
+        bottom: "-30%",
         zIndex: "1"
       }}
     />
@@ -26,9 +30,10 @@ const Contact = () => (
     <div
       style={{
         width: "100%",
-        height: "80vh",
+        height: "85vh",
         backgroundColor: "rgba(150,114,86,0.8)",
-        position: "relative",
+        position: "absolute",
+        bottom: "0vh",
         zIndex: "2"
       }}
     >

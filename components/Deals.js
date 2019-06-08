@@ -12,7 +12,7 @@ const slideDow = slide => {
       position: "relative",
       display: "flex",
       flexDirection: "column",
-      transform: "translateX(100%)",
+      transform: "translateX(155%)",
       transition: "2s",
       zIndex: "2"
     };
@@ -27,7 +27,7 @@ const slideDow = slide => {
       position: "relative",
       display: "flex",
       flexDirection: "column",
-      transform: "translateX(0%)",
+      transform: "translateX(55%)",
       transition: "1.5s",
       zIndex: "2"
     };
@@ -53,7 +53,8 @@ const Deals = props => {
         margin: "5vh 0",
         justifyContent: "flex-end",
         overflow: "hidden",
-        display: "flex"
+        display: "flex",
+        justifyContent: "center"
       }}
     >
       <img
@@ -62,7 +63,7 @@ const Deals = props => {
         style={{
           position: "absolute",
           height: "100%",
-          width: "110%",
+          repeat: "none",
           zIndex: "1"
         }}
       />

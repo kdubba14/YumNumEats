@@ -3,35 +3,35 @@ body {
   overflow-x: hidden;
 }
 
-.navbar{
-  height: 10vh; 
-  width: inherit; 
-  position: fixed; 
-  top: 0; 
-  right: 0; 
-  left: 0; 
-  margin: 0; 
-  display: grid; 
-  grid-template-columns: 1fr 4fr; 
-  grid-template-rows: 10vh; 
-  font-size: 1rem; 
+.navbar {
+  height: 10vh;
+  width: inherit;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 10vh;
+  font-size: 1rem;
   z-index: 3;
 }
 
 .top-nav {
-  background-color: white; 
-  border-bottom: .05em solid #FFA75B; 
-  transition-duration: .25s; 
+  background-color: white;
+  border-bottom: 0.05em solid #ffa75b;
+  transition-duration: 0.25s;
 }
 
 .else-nav {
-  background-color: #FFF9E7; 
+  background-color: #fff9e7;
   border: none;
   transition-duration: 1s;
 }
 
 .menuCategory {
-  min-width:160px;
+  min-width: 160px;
 }
 
 @media screen and (max-width: 700px) {
@@ -51,20 +51,20 @@ body {
     position: fixed;
     top: -30vh;
     background-color: #ffffff;
-    border-bottom: .05em solid #FFA75B; 
-    border-top: .05em solid #FFA75B; 
+    border-bottom: 0.05em solid #ffa75b;
+    border-top: 0.05em solid #ffa75b;
     height: 30%;
     width: 70%;
     margin-left: 30%;
     font-size: 1.2rem;
     z-index: 2;
     display: flex;
-    transition: .8s;
+    transition: 0.8s;
   }
 
   .drop {
     top: 10vh;
-    transition: .8s;
+    transition: 0.8s;
   }
 
   .mobileLinks ul {
@@ -73,7 +73,7 @@ body {
     margin: auto 0;
     padding-left: 10%;
     font-family: gelo, serif;
-    display: flex; 
+    display: flex;
     flex-direction: column;
   }
 
@@ -81,29 +81,32 @@ body {
     margin: auto 0;
   }
 
-  .mobileLinks ul li a{
+  .mobileLinks ul li a {
     width: 100%;
   }
-  
+
+  #contact img {
+    bottom: 40%;
+  }
 }
 
 @media screen and (min-width: 700px) {
   .navbar .webLinks {
-    list-style: none; 
-    color: #967256; 
-    display: inline-block; 
-    text-align: right; 
-    height: 2vh; 
-    width: 80%; 
-    margin: 4vh 0; 
-    padding-right: 20%; 
+    list-style: none;
+    color: #967256;
+    display: inline-block;
+    text-align: right;
+    height: 2vh;
+    width: 80%;
+    margin: 4vh 0;
+    padding-right: 20%;
     font-family: gelo, serif;
   }
-  
+
   .navbar .webLinks li {
-    display: inline-block; 
-    height: 8vh; 
-    margin: 0 .5em;
+    display: inline-block;
+    height: 8vh;
+    margin: 0 0.5em;
     font-size: 1rem;
     max-font-size: 12px;
   }
@@ -122,11 +125,9 @@ body {
   .mobileLinks {
     display: none;
   }
-}
 
-@media screen and (min-width: 700px) {
-  .navbar .webLinks li {
-
+  #contact img {
+    bottom: 10%;
   }
 }
 
@@ -141,40 +142,40 @@ body {
 }
 
 input:focus {
-  border: .2em solid #83D685 !important;
+  border: 0.2em solid #83d685 !important;
   /* box-shadow:0 1px 2px rgba(255, 167, 91, 1) outset !important; */
   /* box-shadow: none !important; */
   margin: none !important;
-  outline-color: #83D685 !important;
+  outline-color: #83d685 !important;
 }
 
 input:focus::placeholder {
-  color: black
+  color: black;
 }
 
 textarea:focus {
-  border: .2em solid #83D685 !important;
+  border: 0.2em solid #83d685 !important;
   /* box-shadow:0 1px 2px rgba(255, 167, 91, 1) outset !important; */
   /* box-shadow: none !important; */
   margin: none !important;
-  outline-color: #83D685 !important;
+  outline-color: #83d685 !important;
 }
 
 textarea:focus::placeholder {
-  color: black
+  color: black;
 }
 
 .nameEmail {
   display: inline-block;
   box-sizing: border-box;
-  border-radius: .3em;
+  border-radius: 0.3em;
   width: 45%;
 }
 
 .subjectMessage {
   display: block;
   width: 100%;
-  border-radius: .3em;
+  border-radius: 0.3em;
   box-sizing: border-box;
 }
 
@@ -193,20 +194,20 @@ textarea:focus::placeholder {
 }
 
 #menu p {
-  border-bottom: .05em solid rgba(150,114,86,0.2);
+  border-bottom: 0.05em solid rgba(150, 114, 86, 0.2);
 }
 
 #menu h3 {
-  border-bottom: .05em solid #FFA75B;
+  border-bottom: 0.05em solid #ffa75b;
 }
 
 .showPics:hover {
-  background-color: #83D685;
-  transition: .5s;
+  background-color: #83d685;
+  transition: 0.5s;
 }
 
 .invalid {
-  border: .25em solid red !important;
+  border: 0.25em solid red !important;
 }
 
 .invalid::placeholder {
