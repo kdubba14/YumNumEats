@@ -16,7 +16,7 @@
     "google-map-react": "^1.1.2",
     "google-maps-react": "^2.0.2",
     "intersection-observer": "^0.5.1",
-    "next": "8.0.3",
+    "next": "9.3.3",
     "next-manifest": "^1.6.0",
     "next-offline": "^3.3.8",
     "now": "^14.2.4",
